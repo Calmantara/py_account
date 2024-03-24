@@ -5,6 +5,9 @@
 import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
+postgres_password = os.getenv("POSTGRES_PASSWORD")
+postgres_username = os.getenv("POSTGRES_USERNAME")
+postgres_host = os.getenv("POSTGRES_HOST")
 
 
 class Config:
@@ -21,10 +24,6 @@ class Config:
 
 
 class Development(Config):
-    postgres_password = os.getenv("POSTGRES_PASSWORD")
-    postgres_username = os.getenv("POSTGRES_USERNAME")
-    postgres_host = os.getenv("POSTGRES_HOST")
-
     SQLALCHEMY_DATABASE_URI = (
         "postgresql://"
         + postgres_username
@@ -43,10 +42,6 @@ class Development(Config):
 #     SQLALCHEMY_ECHO = False
 #     SQLALCHEMY_TRACK_MODIFICATIONS = False
 class Production(Config):
-    postgres_password = os.getenv("POSTGRES_PASSWORD")
-    postgres_username = os.getenv("POSTGRES_USERNAME")
-    postgres_host = os.getenv("POSTGRES_HOST")
-
     SQLALCHEMY_DATABASE_URI = (
         "postgresql://"
         + postgres_username
