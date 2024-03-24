@@ -21,7 +21,9 @@ class Config:
 
 
 class Development(Config):
-    SQLALCHEMY_DATABASE_URI = "postgresql://postgres:xlQVToCslyLpcogELwftgiFYdrprVnSe@monorail.proxy.rlwy.net:10545/railway"
+    SQLALCHEMY_DATABASE_URI = (
+        "postgresql://postgres:mysecretpassword@127.0.0.1:15432/py_account"
+    )
     SQLALCHEMY_ECHO = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
