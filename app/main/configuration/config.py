@@ -49,7 +49,7 @@ class Production(Config):
         + postgres_password
         + "@"
         + postgres_host
-        + "/py_account"
+        + "/railway"
     )
     SQLALCHEMY_ECHO = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
