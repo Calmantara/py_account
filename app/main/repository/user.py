@@ -11,7 +11,9 @@ class UserRepository:
         return User.query.filter_by(id=id).filter_by(deleted_at=None).first_or_404()
 
     def create_user(self, data: User):
-        user = User(username=data["username"], email=data["email"], password="password")
+        user = User(
+            username=data["username"], email=data["email"], password=data["password"]
+        )
         user.set_updated_at(datetime.datetime.utcnow())
         user.set_created_at(datetime.datetime.utcnow())
         self.save_changes(user)
