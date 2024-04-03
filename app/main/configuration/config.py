@@ -17,10 +17,10 @@ class Config:
     DEBUG = os.getenv("DEBUG", False)
 
 
-# class Development(Config):
-#     SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(basedir, "py_account.db")
-#     SQLALCHEMY_ECHO = True
-#     SQLALCHEMY_TRACK_MODIFICATIONS = False
+class Test(Config):
+    SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(basedir, "py_account.db")
+    SQLALCHEMY_ECHO = True
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class Development(Config):
@@ -55,4 +55,4 @@ class Production(Config):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
-config_env = dict(development=Development, production=Production)
+config_env = dict(test=Test, development=Development, production=Production)
